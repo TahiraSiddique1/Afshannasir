@@ -21,6 +21,28 @@ object {
 	}
 }
 
+@media (min-width: 768px) and (max-height: 700px) {
+	html body .mp-s.mp-hero {
+		height: 100svh !important;
+		min-height: 0 !important;
+	}
+
+	html body .mp-s .mp-h1 .elementor-heading-title {
+		font-size: clamp(4rem, 11vw, 8rem) !important;
+	}
+
+	html body .mp-s .elementor-widget.mp-portrait {
+		bottom: 1.5rem !important;
+		width: clamp(15rem, 26vw, 22rem) !important;
+	}
+
+	html body .mp-s .mp-portrait img {
+		height: min(42svh, 17.5rem) !important;
+		width: auto !important;
+		object-fit: contain;
+	}
+}
+
 @media (max-width: 767px) {
 	.mp-s.mp-hero {
 		height: auto !important;
