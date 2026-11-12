@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="HOUSE RENTAL project preview">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#181521"/><stop offset="1" stop-color="#29162c"/></linearGradient><linearGradient id="accent"><stop stop-color="#bd52dc"/><stop offset="1" stop-color="#f293cf"/></linearGradient></defs>
+<rect width="1280" height="720" fill="url(#bg)"/><rect x="42" y="42" width="1196" height="636" rx="30" fill="none" stroke="#735b78" stroke-width="2"/>
+<path d="M42 122h1196" stroke="#735b78" stroke-width="2"/><circle cx="88" cy="82" r="8" fill="#f293cf"/><circle cx="116" cy="82" r="8" fill="#a77fae"/><circle cx="144" cy="82" r="8" fill="#735b78"/>
+<text x="104" y="278" font-family="Arial,sans-serif" font-size="23" font-weight="700" letter-spacing="5" fill="#e7b4ef">SELECTED WORK</text>
+<text x="104" y="370" font-family="Arial,sans-serif" font-size="72" font-weight="700" fill="#fff">HOUSE RENTAL</text><path d="M104 409h250" stroke="url(#accent)" stroke-width="5"/>
+<text x="104" y="479" font-family="Arial,sans-serif" font-size="28" fill="#eadfeb">Play the project video</text>
+<circle cx="1010" cy="362" r="70" fill="#e7b4ef"/><path d="M991 324v76l59-38z" fill="#25142c"/>
+</svg>

@@ -475,3 +475,26 @@ body.home #content > .ast-container > .elementor {
 #contact.mp-s.mp-about { margin-top: 0 !important; min-height: 0; }
 /* Only the hero uses a reordered heading on small screens. */
 .mp-s:not(.mp-hero) .elementor-widget.mp-h1 { order: 0; }
+
+/* Keep text legible over the site's dark and pink section backgrounds. */
+.mp-s:not(.mp-svc) .hero-heading .elementor-heading-title {
+	background: none;
+	color: #f1f5f8;
+	-webkit-text-fill-color: #f1f5f8;
+}
+.mp-s.mp-svc > .mp-num,
+.mp-s.mp-svc > .mp-svc-list,
+#contact.mp-s > .mp-h1,
+#contact.mp-s > .mp-anim {
+	position: relative;
+	z-index: 1;
+}
+.mp-s.mp-svc .mp-svc-t .mp-anim,
+.mp-s.mp-svc .mp-svc-t .mp-anim p { color: #211621 !important; }
+.mp-s.mp-proj .mp-cat,
+.mp-s.mp-proj .mp-cat p { color: #becbd5 !important; opacity: 1; }
+.mp-s .contact-grid a:not(.elementor-button):hover { color: #f5c8ff; }
+.mp-s:not(.mp-svc) .hero-heading .elementor-heading-title {
+	background: none !important;
+	-webkit-text-fill-color: #f1f5f8 !important;
+}
