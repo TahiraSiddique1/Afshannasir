@@ -90,6 +90,13 @@ object {
 		min-height: 100svh;
 	}
 
+	.mp-s.mp-hero > .elementor-widget-html {
+		position: absolute;
+		width: 0;
+		height: 0;
+		overflow: hidden;
+	}
+
 	.mp-s .mp-nav {
 		flex-wrap: wrap;
 		gap: 0.25rem 0.5rem;
@@ -108,6 +115,7 @@ object {
 
 	.mp-s .elementor-widget.mp-h1 {
 		margin-top: 1rem !important;
+		order: 1;
 	}
 
 	.mp-s .mp-h1 .elementor-heading-title {
@@ -135,13 +143,27 @@ object {
 		max-width: 48%;
 	}
 
-	.mp-s .elementor-widget.mp-portrait {
-		width: min(68vw, 16rem) !important;
+	.mp-s.mp-hero .elementor-widget.mp-portrait {
+		position: relative !important;
+		top: auto !important;
+		right: auto !important;
+		bottom: auto !important;
+		left: auto !important;
+		translate: none !important;
+		align-self: center;
+		order: 2;
+		width: min(75vw, 18rem) !important;
+		margin: 1rem 0 0 !important;
 	}
 
 	.mp-s .mp-portrait img {
 		width: 100% !important;
 		height: auto !important;
+	}
+
+	.mp-s .mp-bottom {
+		order: 3;
+		margin-top: auto !important;
 	}
 
 	.mp-s .mp-contact .elementor-button,
@@ -330,18 +352,107 @@ object {
 	}
 }
 
-@media (max-width: 767px) and (max-height: 700px) {
-	.mp-s .elementor-widget.mp-portrait {
-		top: calc(50% + 56px) !important;
-	}
+/* Portfolio repairs: readable service copy, usable project media and contact. */
+html { scroll-behavior: smooth; }
+.mp-s a:focus-visible, .mp-s button:focus-visible {
+	outline: 3px solid #e2a8ff !important;
+	outline-offset: 4px !important;
 }
+.mp-s.mp-svc .mp-svc-t .mp-h1 .elementor-heading-title {
+	background: none;
+	-webkit-text-fill-color: #0c0c0c;
+	color: #0c0c0c;
+	font-size: clamp(1.25rem, 2.4vw, 2.1rem) !important;
+	font-weight: 600;
+	line-height: 1.2;
+	white-space: normal !important;
+}
+.mp-s.mp-svc .mp-svc-t .mp-anim,
+.mp-s.mp-svc .mp-svc-t .mp-anim p {
+	color: #333 !important;
+	font-size: clamp(1rem, 1.3vw, 1.15rem);
+	font-weight: 400;
+	text-align: left;
+}
+.mp-s.mp-svc .mp-svc-t .elementor-widget.mp-h1 { margin-top: 0 !important; }
+.mp-s .mp-cw { height: auto !important; padding-bottom: 1.5rem; }
+.mp-s .mp-card { position: relative !important; top: auto !important; transform: none !important; will-change: auto; }
+.mp-s .mp-cb video {
+	display: block;
+	width: 100%;
+	max-height: 36rem;
+	aspect-ratio: 16 / 9;
+	object-fit: contain;
+	background: #202328;
+	border-radius: 1.25rem;
+}
+.mp-s .mp-pinfo .elementor-widget-text-editor p { line-height: 1.6; }
+.mp-s.mp-about a:not(.elementor-button) { color: inherit; text-decoration: underline; text-underline-offset: .18em; overflow-wrap: anywhere; }
+.mp-s .contact-email-card { max-width: 32rem; line-height: 1.6; }
+.mp-s .contact-email-card .elementor-button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; margin: 1.25rem 0; }
+.mp-s .contact-note { font-size: .95rem; }
+@media (max-width: 767px) {
+	.mp-s .mp-cb video { max-height: none; }
+	.mp-s.mp-svc .mp-svc-t .mp-h1 .elementor-heading-title { text-align: left; }
+	.mp-s .mp-ct { gap: .75rem !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+	html { scroll-behavior: auto; }
+	.mp-s *, .mp-s *::before, .mp-s *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+.mp-s.mp-svc > .mp-num .elementor-heading-title { color: #161116 !important; }
+.mp-s.mp-svc .mp-svc-t .mp-h1 .elementor-heading-title { text-align: left; }
+.mp-s .contact-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1rem;
+	width: min(100%, 64rem);
+}
+.mp-s .contact-email-card, .mp-s .contact-details {
+	max-width: none;
+	padding: clamp(1.5rem, 4vw, 3rem);
+	border: 1px solid #55505a;
+	border-radius: 1.5rem;
+	background: #1c1b20;
+	color: #f5f3f6;
+	line-height: 1.6;
+}
+.mp-s .contact-grid h3 { margin: 0 0 .75rem; color: #fff; font-size: 1.5rem; }
+.mp-s .contact-grid p { margin: 0; }
+.mp-s .contact-details dl { margin: 1.5rem 0 0; display: grid; gap: 1rem; }
+.mp-s .contact-details dt { font-weight: 700; color: #fff; }
+.mp-s .contact-details dd { margin: 0; overflow-wrap: anywhere; }
+@media (max-width: 767px) {
+	.mp-s .contact-grid { grid-template-columns: 1fr; }
+	.mp-s .mp-navlink .elementor-heading-title { font-size: .85rem !important; }
+}
+.mp-s .contact-grid { position: relative; z-index: 1; }
+.mp-s.mp-svc .mp-svc-t .elementor-widget.mp-h1 { order: 0; }
+.mp-s.mp-proj .mp-pname .elementor-heading-title,
+.mp-s.mp-proj .mp-pnum .elementor-heading-title { color: #e5edf2 !important; }
+.mp-s.mp-proj .mp-pinfo .elementor-widget-text-editor,
+.mp-s.mp-proj .mp-pinfo .elementor-widget-text-editor p { color: #d7e2ea !important; }
 
-@media (max-width: 320px) {
-	.mp-s.mp-hero {
-		min-height: 700px !important;
+/* Keep the hero and navigation inside the viewport at narrow and tablet sizes. */
+@media (min-width: 768px) {
+	.mp-s.mp-hero .elementor-widget.mp-portrait {
+		left: auto !important;
+		right: clamp(1rem, 4vw, 4rem) !important;
+		bottom: 2rem !important;
+		width: clamp(15rem, 38vw, 28rem) !important;
+		translate: none !important;
 	}
-
-	.mp-s .elementor-widget.mp-portrait {
-		top: calc(50% + 80px) !important;
-	}
+	.mp-s.mp-hero .mp-portrait img { max-width: 100% !important; }
+}
+@media (max-width: 380px) {
+	.mp-s.mp-hero .mp-nav { gap: 0 .15rem; padding-inline: .25rem !important; }
+	.mp-s.mp-hero .mp-navlink .elementor-heading-title { font-size: .75rem !important; letter-spacing: 0; }
+}
+.mp-s .mp-navlink a,
+.mp-s .mp-contact .elementor-button,
+.mp-s .mp-live .elementor-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 44px;
 }
