@@ -456,3 +456,22 @@ html { scroll-behavior: smooth; }
 	justify-content: center;
 	min-height: 44px;
 }
+
+/* Let page sections use the viewport instead of Astra's narrow centered shell. */
+body.home #content > .ast-container {
+	width: 100%;
+	max-width: none;
+	padding-inline: 0;
+}
+body.home #content > .ast-container > .elementor {
+	width: 100%;
+	max-width: none;
+}
+
+/* The exported card margins and contact minimum height created long blank gaps. */
+.mp-s.mp-proj { padding-bottom: clamp(3rem, 6vw, 6rem) !important; }
+.mp-s .mp-clist { gap: clamp(1rem, 2vw, 2rem) !important; }
+.mp-s .mp-clist > .mp-cw { margin: 0 !important; padding-bottom: 0 !important; }
+#contact.mp-s.mp-about { margin-top: 0 !important; min-height: 0; }
+/* Only the hero uses a reordered heading on small screens. */
+.mp-s:not(.mp-hero) .elementor-widget.mp-h1 { order: 0; }
